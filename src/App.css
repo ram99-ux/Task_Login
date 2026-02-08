@@ -1,0 +1,278 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background with Blur Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  z-index: -2;
+}
+
+/* Dark Overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Form Container */
+div > form,
+div > div {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Headings */
+h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Labels */
+label {
+  display: block;
+  color: #34495e;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Input Fields - All Types */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: white;
+  color: #2c3e50;
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Disabled state */
+input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input::placeholder {
+  color: #95a5a6;
+}
+
+/* Checkbox Input */
+input[type="checkbox"] {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active,
+input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Secondary Buttons (Cancel, Links) */
+button:has(a),
+button[onClick*="cancel"] {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  margin-top: 12px;
+}
+
+button:has(a):hover {
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+/* Links */
+a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* Captcha Display */
+p {
+  margin: 12px 0;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+p b {
+  color: #e74c3c;
+  font-size: 18px;
+  letter-spacing: 2px;
+  background: #f8f9fa;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+/* User Profile Display */
+div[key] {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+}
+
+div[key] h2 {
+  color: #27ae60;
+  margin-bottom: 20px;
+}
+
+div[key] p {
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #ecf0f1;
+  font-size: 16px;
+}
+
+div[key] p:last-of-type {
+  border-bottom: none;
+}
+
+div[key] strong {
+  color: #34495e;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Spacing between form elements */
+form br {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  div > form,
+  div > div {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Loading Animation (Optional) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+div > form,
+div > div {
+  animation: fadeIn 0.5s ease;
+}
