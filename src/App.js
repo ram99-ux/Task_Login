@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from './routes/Login'
 import  Register from './routes/Register'
-import { BrowserRouter as Router , Routes,Route } from 'react-router-dom'
+import { HashRouter as Router , Routes,Route } from 'react-router-dom'
 import ForgotPassword from './routes/ForGotPassword'
 import ResetPassword from './routes/ResetPasword'
 import './App.css'
