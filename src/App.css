@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Background with Blur Effect */
+
 body::before {
   content: '';
   position: fixed;
@@ -28,7 +28,7 @@ body::before {
   z-index: -2;
 }
 
-/* Dark Overlay */
+
 body::after {
   content: '';
   position: fixed;
@@ -40,7 +40,7 @@ body::after {
   z-index: -1;
 }
 
-/* Container */
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -49,7 +49,7 @@ body::after {
   padding: 20px;
 }
 
-/* Form Container */
+
 div > form,
 div > div {
   background: rgba(255, 255, 255, 0.95);
@@ -62,7 +62,7 @@ div > div {
   margin: 0 auto;
 }
 
-/* Headings */
+
 h2 {
   color: #2c3e50;
   margin-bottom: 25px;
@@ -71,7 +71,7 @@ h2 {
   font-weight: 600;
 }
 
-/* Labels */
+
 label {
   display: block;
   color: #34495e;
@@ -80,7 +80,7 @@ label {
   font-size: 14px;
 }
 
-/* Input Fields - All Types */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -112,7 +112,6 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-/* Disabled state */
 input:disabled {
   background: #f5f5f5;
   cursor: not-allowed;
@@ -123,7 +122,7 @@ input::placeholder {
   color: #95a5a6;
 }
 
-/* Checkbox Input */
+
 input[type="checkbox"] {
   margin-right: 8px;
   width: 18px;
@@ -139,7 +138,7 @@ label:has(input[type="checkbox"]) {
   font-weight: 400;
 }
 
-/* Buttons */
+
 button,
 input[type="submit"] {
   width: 100%;
@@ -168,7 +167,7 @@ input[type="submit"]:active {
   transform: translateY(0);
 }
 
-/* Secondary Buttons (Cancel, Links) */
+
 button:has(a),
 button[onClick*="cancel"] {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -179,14 +178,13 @@ button:has(a):hover {
   box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
 }
 
-/* Links */
 a {
   color: white;
   text-decoration: none;
   display: block;
 }
 
-/* Captcha Display */
+
 p {
   margin: 12px 0;
   color: #2c3e50;
@@ -204,7 +202,7 @@ p b {
   margin-left: 8px;
 }
 
-/* User Profile Display */
+
 div[key] {
   background: rgba(255, 255, 255, 0.95);
   padding: 30px;
@@ -235,12 +233,11 @@ div[key] strong {
   display: inline-block;
 }
 
-/* Spacing between form elements */
+
 form br {
   display: none;
 }
 
-/* Responsive Design */
 @media (max-width: 480px) {
   div > form,
   div > div {
@@ -260,7 +257,7 @@ form br {
   }
 }
 
-/* Loading Animation (Optional) */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
